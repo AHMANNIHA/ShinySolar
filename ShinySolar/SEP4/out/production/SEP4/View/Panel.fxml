@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<VBox xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PanelController">
+      <FlowPane alignment="TOP_RIGHT" hgap="5.0">
+      <HBox prefHeight="25.0" prefWidth="384.0">
+            <Label alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="360.0" text="Select the date, panel type and manufacturer, then search:">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+      </HBox>
+            <Label text="From" />
+            <DatePicker fx:id="from" prefHeight="25.0" prefWidth="100.0" />
+            <Label text="to" />
+            <DatePicker fx:id="to" prefHeight="25.0" prefWidth="100.0" />
+            <CheckBox fx:id="pv" mnemonicParsing="false" onAction="#checkTH" text="PV" />
+            <CheckBox fx:id="th" mnemonicParsing="false" onAction="#checkPV" text="TH" />
+            <ComboBox fx:id="manufacturersBox" prefHeight="25.0" prefWidth="97.0" promptText="Select" style="-fx-background-radius: 5em; -fx-border-radius: 5em;" />
+             <Button fx:id="searchPanelsBtn" mnemonicParsing="false" onAction="#searchPanels" prefHeight="25.0" prefWidth="56.0" style="-fx-background-color: #00c991; -fx-background-radius: 5em; -fx-background-radius: 5em;" text="Search" />
+             <Button fx:id="addPanelBtn" mnemonicParsing="false" onAction="#addPanels" prefHeight="25.0" prefWidth="38.0" style="-fx-background-radius: 5em; -fx-border-radius: 5em;" text="Add" />
+             <Button fx:id="helpPanelBtn" mnemonicParsing="false" onAction="#helpPanel" style="-fx-background-color: #9643A9; -fx-background-radius: 5em; -fx-border-radius: 5em;" text="?" />
+      <opaqueInsets>
+         <Insets />
+      </opaqueInsets>
+      <VBox.margin>
+         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+      </VBox.margin>
+      </FlowPane>
+      <TableView fx:id="panelTable" prefHeight="510.0" prefWidth="970.0">
+        <columns>
+          <TableColumn fx:id="panelCol1" prefWidth="194.0" text="Installation" />
+          <TableColumn fx:id="panelCol2" prefWidth="194.0" text="Type" />
+          <TableColumn fx:id="panelCol3" prefWidth="194.0" text="Measurement" />
+          <TableColumn fx:id="panelCol4" prefWidth="194.0" text="Output" />
+          <TableColumn fx:id="panelCol5" prefWidth="194.0" text="Manufacturer" />
+        </columns>
+      </TableView>
+</VBox>

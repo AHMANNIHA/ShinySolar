@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<VBox xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MeasurementController">
+      <AnchorPane prefHeight="510.0" prefWidth="970.0">
+            <ImageView fitHeight="300.0" fitWidth="602.0" layoutX="372.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
+                  <Image url="file:/C:/Users/QeSaii/IdeaProjects/SEP4/images/Shiny.png" />
+            </ImageView>
+            <HBox layoutX="9.0" layoutY="2.0" prefHeight="25.0" prefWidth="149.0">
+                  <Label alignment="CENTER_RIGHT" prefHeight="40.0" prefWidth="159.0" text="Photovoltaic Panels:">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+            </HBox>
+            <HBox layoutX="14.0" layoutY="27.0" prefHeight="25.0" prefWidth="139.0">
+                  <Label alignment="CENTER_RIGHT" prefHeight="40.0" prefWidth="114.0" text="Thermal Panels:">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+            </HBox>
+            <AreaChart fx:id="AreaChart" layoutY="63.0" prefHeight="376.0" prefWidth="621.0">
+              <xAxis>
+                <CategoryAxis side="BOTTOM" fx:id="x" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis fx:id="y" side="LEFT" />
+              </yAxis>
+            </AreaChart>
+            <Button fx:id="helpMeasurementBtn" layoutX="942.0" layoutY="6.0" mnemonicParsing="false" onAction="#helpMeasurement" prefHeight="14.0" prefWidth="22.0" style="-fx-background-radius: 5em; -fx-background-color: #9643A9; -fx-border-radius: 5em;" text="?" />
+            <TextField fx:id="avgWattsTextField" alignment="CENTER" layoutX="425.0" layoutY="52.0" prefHeight="25.0" prefWidth="102.0" promptText="watts" style="-fx-background-radius: 5em; -fx-border-radius: 5em;" text="###" />
+            <TextField fx:id="pvWattsTextField" alignment="CENTER" layoutX="163.0" layoutY="2.0" prefHeight="25.0" prefWidth="102.0" promptText="watts" style="-fx-background-radius: 5em; -fx-border-radius: 5em;" text="###" />
+            <TextField fx:id="pvAvgWattsTextField" alignment="CENTER" layoutX="425.0" layoutY="2.0" prefHeight="25.0" prefWidth="102.0" promptText="watts" style="-fx-background-radius: 5em; -fx-border-radius: 5em;" text="###" />
+            <Label alignment="CENTER" layoutX="281.0" layoutY="27.0" prefHeight="25.0" prefWidth="139.0" text="Median TH Output:">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <HBox alignment="TOP_RIGHT" layoutX="659.0" layoutY="2.0" prefHeight="33.0" prefWidth="213.0">
+                  <TextField fx:id="measurementDate" alignment="CENTER" prefHeight="33.0" prefWidth="217.0" style="-fx-background-radius: 5em; -fx-border-radius: 5em;" text="HH:MM - DD/MM/YYYY">
+                     <font>
+                        <Font name="Arial" size="18.0" />
+                     </font>
+                  </TextField>
+            </HBox>
+      <Label alignment="CENTER_RIGHT" layoutX="14.0" layoutY="51.0" prefHeight="0.0" prefWidth="45.0" text=" Total:">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+            <HBox layoutX="571.0" layoutY="2.0" prefHeight="25.0" prefWidth="88.0">
+                  <Label alignment="CENTER" prefHeight="25.0" prefWidth="96.0" text="Timestamp:">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+            </HBox>
+            <Label alignment="CENTER" layoutX="279.0" layoutY="2.0" prefHeight="25.0" prefWidth="143.0" text="Median PV Output:">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="263.0" layoutY="440.0" prefHeight="25.0" prefWidth="96.0" text="Time:">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="thAvgWattsTextField" alignment="CENTER" layoutX="425.0" layoutY="27.0" prefHeight="25.0" prefWidth="102.0" promptText="watts" style="-fx-background-radius: 5em; -fx-border-radius: 5em;" text="###" />
+            <Label alignment="CENTER" layoutX="-39.0" layoutY="214.0" prefHeight="25.0" prefWidth="96.0" rotate="-90.0" text="Power">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Button fx:id="resetBtn" layoutX="890.0" layoutY="6.0" mnemonicParsing="false" onAction="#reset" style="-fx-background-radius: 5em; -fx-border-radius: 5em; -fx-background-color: #71C562;" text="Reset" />
+            <Label layoutX="279.0" layoutY="52.0" prefHeight="25.0" prefWidth="131.0" text=" Median Output:">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+      <Label layoutX="545.0" layoutY="51.0" prefHeight="25.0" prefWidth="189.0" text=" Median Output Per Hour:">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="avgWattsPerHourTextField" alignment="CENTER" layoutX="733.0" layoutY="52.0" prefHeight="25.0" prefWidth="102.0" style="-fx-border-radius: 5em; -fx-background-radius: 5em;" text="###" />
+      <TextField fx:id="totalWattsTextField" alignment="CENTER" layoutX="163.0" layoutY="52.0" prefHeight="25.0" prefWidth="102.0" promptText="watts" style="-fx-background-radius: 5em; -fx-border-radius: 5em;" text="###" />
+      <Label alignment="CENTER" layoutX="510.0" layoutY="15.0" prefHeight="25.0" prefWidth="96.0" rotate="90.0" text="Watts">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+               <TextField fx:id="thWattsTextField" alignment="CENTER" layoutX="163.0" layoutY="27.0" prefHeight="25.0" prefWidth="102.0" promptText="watts" style="-fx-background-radius: 5em; -fx-border-radius: 5em;" text="###" />
+      </AnchorPane>
+</VBox>

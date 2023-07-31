@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<VBox xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ManufacturerController">
+      <FlowPane alignment="TOP_RIGHT" hgap="5.0">
+      <HBox prefHeight="25.0" prefWidth="324.0">
+            <Label alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="317.0" text="Select the manufacturer and attribute, then update:">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+      </HBox>
+            <ComboBox fx:id="manufacturerBox" promptText="Select" style="-fx-background-radius: 5em; -fx-border-radius: 5em;" />
+            <ComboBox fx:id="attributeBox" promptText="Select" style="-fx-background-radius: 5em; -fx-border-radius: 5em;" />
+            <TextField fx:id="attributeField" promptText="Change Value" style="-fx-background-radius: 5em; -fx-border-radius: 5em;" />
+            <Button fx:id="updateManufacturerBtn" mnemonicParsing="false" onAction="#updateManufacturers" style="-fx-background-radius: 5em; -fx-background-color: #00c991; -fx-border-radius: 5em;" text="Update" />
+            <Button fx:id="addManufacturerBtn" mnemonicParsing="false" onAction="#addManufacturer" style="-fx-background-radius: 5em; -fx-border-radius: 5em;" text="Add" />
+            <Button fx:id="deleteManufacturerBtn" mnemonicParsing="false" onAction="#deleteManufacturer" style="-fx-background-radius: 5em; -fx-border-radius: 5em;" text="Delete" />
+            <Button fx:id="refreshManufacturerBtn" mnemonicParsing="false" onAction="#refreshManufacturers" style="-fx-background-radius: 5em; -fx-background-radius: 5em;" text="Refresh" />
+            <Button fx:id="helpManufacturerBtn" mnemonicParsing="false" onAction="#helpManufacturer" style="-fx-background-color: #9643A9; -fx-background-radius: 5em; -fx-background-radius: 5em;" text="?" />
+      <VBox.margin>
+         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+      </VBox.margin>
+      </FlowPane>
+      <TableView fx:id="manufacturerTable" prefHeight="510.0" prefWidth="970.0">
+        <columns>
+          <TableColumn fx:id="colManufacturerId" prefWidth="161.6" text="Id" />
+          <TableColumn fx:id="colManufacturerName" prefWidth="161.6" text="Name" />
+            <TableColumn fx:id="colManufacturerAddress" prefWidth="161.6" text="Address" />
+            <TableColumn fx:id="colManufacturerPhone" prefWidth="161.6" text="Phone" />
+            <TableColumn fx:id="colManufacturerEmail" prefWidth="161.6" text="Email" />
+            <TableColumn fx:id="colManufacturerWebsite" prefWidth="161.6" text="Website" />
+        </columns>
+      </TableView>
+</VBox>
